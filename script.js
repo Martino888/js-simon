@@ -8,27 +8,32 @@
 
 let listaCasuali = [];
 let btn = document.getElementById('btn');
-let inputTime;
+let inputNum;
 let punteggio;
 
 
 
 
-btn.addEventListener('click',function() {
+btn.addEventListener('click', function () {
     casuali();
     console.log(listaCasuali);
-    setTimeout(function() {
+    setTimeout(function () {
         punteggio = 0;
-        document.getElementById("casuali").innerHTML = ''
-        
-        for (let i = 0; i < document.getElementById("quanti").value; i++)
-        {   inputTime = prompt('inserisci un numero');
-            if(inputTime == listaCasuali[i]){
+        document.getElementById("casuali").innerHTML = '';
+        document.getElementById("risultato").innerHTML = ''
+        for (let i = 0; i < document.getElementById("quanti").value; i++) {
+            inputNum = prompt("inserisci i numeri in sequenza ");
+            if (inputNum == listaCasuali[i]) {
                 punteggio++;
-                console.log("il numero " +listaCasuali[i]);
+                document.getElementById('risultato').innerHTML = ("esatti: " + listaCasuali[i]);
+                console.log("esatti: " + listaCasuali[i]);
+            }else if(inputNum != listaCasuali[i]) {
+                punteggio--;
+                document.getElementById('risultato').innerHTML = ("sbagliati: " + listaCasuali[i]);
+                console.log("sbagliati: " + listaCasuali[i]);
             }
         }
-    },3000)
+    }, 3000)
 })
 
 
@@ -44,9 +49,8 @@ function casuali() {
             }
             str += num;
         }
-        document.getElementById("casuali").innerHTML = "Numeri generati: " + str;
+        document.getElementById("casuali").innerHTML = "Hai 30' secondi per memorizarli: " + str;
     } else {
         document.getElementById("casuali").innerHTML = "Inserisci un numero maggiore di 0 e inferiore a 100";
     }
 }
-

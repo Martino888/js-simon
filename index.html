@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <p>Quanti numeri generare? 
-            <input type="text" id="quanti">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Memory</h1>
+        <h2>
+            Quanti numeri riesci a ricordare ?
+            Sfida te stesso..
+        </h2>
+        <h4>Quanti numeri generare?
+            <input type="text" id="quanti" value="5">
             <input type="button" id="btn" value="Genera casuali">
-         </p>
-         <p id="casuali"></p>
-        <script src="script.js" async defer></script>
-    </body>
+        </h4>
+        <h3 id="casuali"></h3>
+        <p id="risultato"></p>
+    </div>
+    <script src="script.js" async defer></script>
+</body>
+
 </html>
