@@ -9,7 +9,8 @@
 let listaCasuali = [];
 let btn = document.getElementById('btn');
 let inputNum;
-let punteggio;
+let punteggioEsatte; 
+let punteggioErrate;
 
 
 
@@ -18,19 +19,22 @@ btn.addEventListener('click', function () {
     casuali();
     console.log(listaCasuali);
     setTimeout(function () {
-        punteggio = 0;
-        document.getElementById("casuali").innerHTML = '';
-        document.getElementById("risultato").innerHTML = ''
+        punteggioEsatte = 0;
+        punteggioErrate = 0;
+        document.getElementById("casuali").innerHTML = ' ';
+        document.getElementById("risultato").innerHTML = ' ';
         for (let i = 0; i < document.getElementById("quanti").value; i++) {
             inputNum = prompt("inserisci i numeri in sequenza ");
             if (inputNum == listaCasuali[i]) {
-                punteggio++;
-                document.getElementById('risultato').innerHTML = ("esatti: " + listaCasuali[i]);
+                punteggioEsatte++;
+                document.getElementById('risultato').innerHTML = ("esatti: " + punteggioEsatte);
                 console.log("esatti: " + listaCasuali[i]);
+                console.log("esatti:" + punteggioEsatte);
             }else if(inputNum != listaCasuali[i]) {
-                punteggio--;
-                document.getElementById('risultato').innerHTML = ("sbagliati: " + listaCasuali[i]);
+                punteggioErrate++;
+                document.getElementById('risultato').innerHTML = ("sbagliati: " + punteggioErrate);
                 console.log("sbagliati: " + listaCasuali[i]);
+                console.log("sbagliati:" + punteggioErrate);
             }
         }
     }, 3000)

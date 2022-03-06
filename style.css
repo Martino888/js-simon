@@ -17,6 +17,11 @@ body {
     margin-top: 3em;
 }
 
+#btn {
+    border-radius:1em;
+    padding: 0.5em;
+}
+
 h1 {
     display: flex;
     justify-content: center;
@@ -28,5 +33,11 @@ h2 {
 }
 
 #casuali{
+    padding-top:5em;
+    color: red;
+}
+
+#risultato{
+    padding-top:3em;
     color: red;
 }
